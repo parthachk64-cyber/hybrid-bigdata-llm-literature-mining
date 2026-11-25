@@ -1,0 +1,96 @@
+{
+  "run_id": "scifact-nomic-embed",
+  "env": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "cpu_count": 12,
+    "machine": "AMD64",
+    "git_commit": "no-git",
+    "torch": "2.13.0+cpu"
+  },
+  "label": "SciFact test",
+  "banner": "",
+  "config": {
+    "config_version": 1,
+    "ingest": {
+      "segment_max_chars": 420,
+      "segment_sentences": 3
+    },
+    "bm25": {
+      "k1": 1.5,
+      "b": 0.75,
+      "remove_stopwords": true
+    },
+    "encoder": {
+      "name": "ollama:nomic-embed-text",
+      "dim": 256,
+      "max_len": 256
+    },
+    "retrieval": {
+      "alpha": 0.5,
+      "candidate_depth": 50,
+      "normalization": "minmax",
+      "top_k": 10
+    },
+    "expansion": {
+      "enabled": false,
+      "max_terms": 4
+    },
+    "feedback": {
+      "eta": 0.2,
+      "gamma": 0.9,
+      "epsilon": 0.1,
+      "seed": 7
+    },
+    "trend": {
+      "bin": "year",
+      "decay": 0.7
+    },
+    "distributed": {
+      "backend": "multiprocessing-parquet",
+      "workers": 2,
+      "shards": 4
+    }
+  },
+  "config_hash": "e40a3102c53f9126",
+  "encoder": {
+    "name": "ollama:nomic-embed-text",
+    "kind": "transformer-encoder",
+    "is_transformer": true,
+    "revision": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "tokenizer": "model-native (server side)",
+    "max_len": "2000 chars",
+    "pooling": "model-native",
+    "dim": 768,
+    "normalization": "l2",
+    "prefixes": {
+      "document": "search_document: ",
+      "query": "search_query: "
+    },
+    "passage_to_doc": "max over passages"
+  },
+  "corpus_run_info": {
+    "backend": "local",
+    "workers": 1,
+    "mode": "single-process",
+    "seconds": 2.5047713999956613
+  },
+  "n_docs": 5183,
+  "dataset": {
+    "name": "SciFact (BEIR format, HF mirror BeIR/scifact rev b3b53356)",
+    "split": "released test (300 q) / train for tuning",
+    "n_train_queries": 809,
+    "files_sha256": {
+      "corpus.parquet": "243324b35f03d82bd6d98a5f575966876e86cad7ce16e5333a35b1b793dc4f45",
+      "queries.parquet": "1c37956c5dc8b810b60302323c24d1a9e79e26411ba8f5ad9d0888642e2a9034",
+      "test.tsv": "0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c",
+      "train.tsv": "a53f2114831916c096b6c37d9e54da68cef4efdcdbd5ed46533601af972acf1d"
+    },
+    "limits": "no click log, no citation network, no 1M-scale evidence; relevance != truth"
+  },
+  "k": 10,
+  "n_test_queries": 300,
+  "seed": 7,
+  "generator": null,
+  "post_run_note": "encoder.dim was None at run time (vectors came from the disk cache); filled with 768 after a probe call. git_commit was 'no-git' because the repo had no commit when the run executed."
+}

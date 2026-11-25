@@ -1,0 +1,9 @@
+config_version: 1
+ingest: {segment_max_chars: 420, segment_sentences: 3}
+bm25: {k1: 1.5, b: 0.75, remove_stopwords: true}
+encoder: {name: hashing, dim: 256, max_len: 256}   # offline substitute, NOT a transformer
+retrieval: {alpha: 0.5, candidate_depth: 50, normalization: minmax, top_k: 10}
+expansion: {enabled: false, max_terms: 4}
+feedback: {eta: 0.2, gamma: 0.9, epsilon: 0.1, seed: 7}
+trend: {bin: year, decay: 0.7}
+distributed: {backend: multiprocessing-parquet, workers: 2, shards: 4}

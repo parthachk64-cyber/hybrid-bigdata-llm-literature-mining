@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this companion, please cite the paper it accompanies."
+title: "litmine: evidence-linked companion for Hybrid Big Data-LLM Framework for Intelligent Scientific Literature Mining"
+type: software
+authors:
+  - family-names: Chakraborty
+    given-names: Partha
+    orcid: "https://orcid.org/0009-0006-3203-8902"
+repository-code: "https://github.com/parthachk64-cyber/hybrid-bigdata-llm-literature-mining"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Hybrid Big Data-LLM Framework for Intelligent Scientific Literature Mining"
+  authors:
+    - {family-names: Alam, given-names: "Md. Ishtiaque", orcid: "https://orcid.org/0009-0005-1108-1015"}
+    - {family-names: Rashed, given-names: "Ruhul Amin Md", orcid: "https://orcid.org/0009-0000-6133-9831"}
+    - {family-names: Chakraborty, given-names: Partha, orcid: "https://orcid.org/0009-0006-3203-8902"}
+    - {family-names: Mohonta, given-names: "Sraboni Clara", orcid: "https://orcid.org/0009-0002-4868-5371"}
+    - {family-names: Imam, given-names: Hasan, orcid: "https://orcid.org/0009-0003-5718-8809"}
+    - {family-names: Bhuiyan, given-names: "Mohammad Muzahidur Rahman", orcid: "https://orcid.org/0009-0001-1774-9726"}
+  collection-title: "2026 IEEE International Conference for Convergence in Computing Technology (I3CTCON)"
+  location: {name: "Lonavala, India"}
+  start: 1
+  end: 9
+  year: 2026
+  month: 3
+  doi: "10.1109/I3CTCON68242.2026.11507315"

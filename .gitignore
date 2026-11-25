@@ -1,0 +1,10 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.coverage
+data/scifact/
+data/scale/
+*.pdf
+.env
+build/
+dist/

@@ -1,0 +1,49 @@
+registry_version: 1
+sources:
+- id: demo-synthetic
+  kind: synthetic
+  path: src/litmine/demo/
+  license: MIT (original, synthetic)
+  works_raw: 36
+  works_after_dedup: 35
+  queries: 11
+  splits:
+    train: 6
+    test: 5
+  benchmark_eligible: false
+  notes: regression/walkthrough only
+- id: scifact-beir
+  kind: benchmark
+  upstream:
+  - https://github.com/allenai/scifact
+  - https://github.com/beir-cellar/beir
+  fetched_from: https://huggingface.co/datasets/BeIR/scifact
+  revision: b3b5335604bf5ee3c4447671af975ea25143d4f5
+  license: CC-BY-SA-4.0
+  release_date: see upstream
+  docs: 5183
+  queries_total: 1109
+  test_queries_with_qrels: 299
+  files_sha256:
+    corpus.parquet: 243324b35f03d82bd6d98a5f575966876e86cad7ce16e5333a35b1b793dc4f45
+    queries.parquet: 1c37956c5dc8b810b60302323c24d1a9e79e26411ba8f5ad9d0888642e2a9034
+    test.tsv: 0864bb985e0ca2367ba217977e72004d549054b2b06666ed9d4825ac7c21284c
+    train.tsv: a53f2114831916c096b6c37d9e54da68cef4efdcdbd5ed46533601af972acf1d
+  benchmark_eligible: true
+  limits: no clicks, no citation network, no 1M scale; relevance != truth
+- id: paper-scale
+  kind: owner-provided
+  status: NOT AVAILABLE
+  required: manifest of >=1,000,000 distinct works with licence
+  executed_sizes: []
+- id: paper-original-inputs
+  status: NOT AVAILABLE
+  missing:
+  - corpus snapshot
+  - query set
+  - relevance judgments
+  - feedback sessions
+  - checkpoints
+  - ontology
+  - cluster config
+  - source code

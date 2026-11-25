@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litmine"
+version = "0.1.0"
+description = "Evidence-linked companion for the IEEE I3CTCON 2026 paper on hybrid big data-LLM scientific literature mining"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Partha Chakraborty" }]
+dependencies = ["numpy>=1.24", "pyyaml>=6", "pyarrow>=14", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+full = ["torch>=2.1", "transformers>=4.40"]
+spark = ["pyspark>=3.5"]
+bench = ["pandas>=2"]
+dev = ["pytest>=7", "pytest-cov>=4", "ruff>=0.4"]
+
+[project.scripts]
+litmine = "litmine.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+litmine = ["demo/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: needs a local model or large data", "model: needs real model weights"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["litmine"]
+omit = ["*/cli.py"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501", "E702", "E731", "B905"]

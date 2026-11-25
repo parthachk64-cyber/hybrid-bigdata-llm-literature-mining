@@ -1,0 +1,5 @@
+# Full profile: real local transformer encoder + local generative LLM via Ollama (no token, no network beyond localhost).
+config_version: 1
+encoder: {name: "ollama:nomic-embed-text", max_len: 2000}
+retrieval: {alpha: 0.5, candidate_depth: 100, normalization: minmax, top_k: 10}
+expansion: {enabled: true, max_terms: 4}

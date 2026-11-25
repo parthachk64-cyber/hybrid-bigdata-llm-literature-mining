@@ -1,0 +1,21 @@
+# Controlled vocabulary for rule-based extraction (the CPU/offline extractor). Labels are canonical node names.
+methods:
+  CUSUM: [CUSUM, cumulative sum]
+  Bayesian online changepoint detection: [Bayesian online changepoint detection, Bayesian changepoint, Bayesian run-length method, run-length posterior]
+  Kalman filter residual test: [Kalman filter residual test, Kalman filter residual, Kalman filter]
+  EWMA control chart: [EWMA control chart, EWMA chart, EWMA]
+  Page-Hinkley test: [Page-Hinkley test, Page-Hinkley]
+  Kernel two-sample test: [kernel two-sample test, kernel test, maximum mean discrepancy]
+  Mann-Kendall test: [Mann-Kendall test, Mann-Kendall]
+  Wavelet decomposition: [wavelet decomposition, wavelet]
+  Isolation forest: [isolation forest]
+  Circular binary segmentation: [circular binary segmentation]
+  Graph neural network: [graph neural network, graph neural networks]
+datasets: {}
+topics:
+  abrupt shift detection: [abrupt shift, abrupt shifts, sudden shift, sudden shifts, changepoint, drift]
+  anomaly screening: [anomaly screening, anomalies]
+  trend testing: [trend testing, trend test]
+  regime change: [regime change, regime shift, regime shifts, regime changes]
+  traffic forecasting: [traffic flow, traffic forecasting]
+  scientific text mining: [citation intent, retrieval-augmented, semantic textual similarity]

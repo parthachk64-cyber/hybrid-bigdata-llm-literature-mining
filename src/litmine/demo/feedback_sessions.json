@@ -1,0 +1,19 @@
+{
+  "user_a": [
+    [
+      "q01",
+      "q03"
+    ],
+    [
+      "q04",
+      "q07"
+    ]
+  ],
+  "user_b": [
+    [
+      "q09",
+      "q11"
+    ]
+  ],
+  "note": "SIMULATED sessions: sequences of training queries. These are NOT real user clicks."
+}
